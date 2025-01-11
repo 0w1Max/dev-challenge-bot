@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const sqlite3 = require('sqlite3').verbose();
 
 // Замените 'YOUR_BOT_TOKEN' на свой токен бота
-const bot = new TelegramBot('YOUR_BOT_TOKEN', { polling: true });
+const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 // Создаем или подключаемся к базе данных SQLite
 const db = new sqlite3.Database('./database/challenge.db', (err) => {
